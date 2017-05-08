@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helpers from '../utils/Helpers';
-import SearchResults from '../components/SearchResults';
 
 const InputType = (props) => {
   return (
