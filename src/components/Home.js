@@ -1,9 +1,9 @@
-import {react} from 'react';
+import React from 'react';
 
-
-const Home = ()=>{
-  <div><h1>Hey!!</h1></div>
+class Home extends React.Component {
+  render() {
+    return <p>Hello, world!</p>;
+  }
 }
 
-
-exports.modules = Home;
+export default Home;
