@@ -56,6 +56,7 @@ class App extends React.Component {
 
 // Maps state from store to props
 const mapStateToProps = (state, ownProps) => {
+  console.log(`STATE ${state}`, state);
   return {
     recipesList: state.searchReducer.recipesList
   }
