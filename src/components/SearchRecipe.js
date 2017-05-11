@@ -25,10 +25,13 @@ const SubmitButton = () => {
 
 const SearchRecipe = (props) => {
   return (
-    <form onSubmit={props.handleSubmit}>
-      <InputType onChange={props.handleChange} />
-      <SubmitButton/>
-    </form>
+    <div>
+      <form onSubmit={props.handleSubmit}>
+        <InputType onChange={props.handleChange} />
+        <SubmitButton/>
+      </form>
+      <hr></hr>
+    </div>
   );
 }
 

@@ -14,12 +14,13 @@ class App extends React.Component {
   }
 
   handleChange(event) {
+    console.log("event.target.value", event.target.value);
     this.props.startSearching(event.target.value);
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    let searchTerm = event.target.value;
+    let searchTerm = this.props.searchTerm;
     Helpers.getRecipes(searchTerm).then((response) => {
       if (response.status !== 200) {
         this.props.errorSearching(searchTerm, response.message);
@@ -42,11 +43,11 @@ class App extends React.Component {
             <div className="col-md-4"></div>
           </div>
           <div className="row">
-            <div className="col-md-1"></div>
-            <div className="col-md-10">
+            <div className="col-md-4"></div>
+            <div className="col-md-4">
               <SearchResults recipesList={this.props.recipesList}/>
             </div>
-            <div className="col-md-1"></div>
+            <div className="col-md-4"></div>
           </div>
         </div>
       </div>
@@ -58,7 +59,8 @@ class App extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   console.log(`STATE ${state}`, state);
   return {
-    recipesList: state.searchReducer.recipesList
+    recipesList: state.searchReducer.recipesList,
+    searchTerm: state.searchReducer.searchTerm
   }
 };
 // Maps actions to props
